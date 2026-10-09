@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lodesterre Tax Accountants | Michael J Chaput Tax Services</title>
+<meta name="description" content="Lodesterre Tax Accountants (Michael J Chaput Tax Services). Our mission is to minimize taxes by utilizing every legal tax credit, deduction and adjustment available to individuals, families, businesses, partnerships, corporations, estates and trusts.">
+<meta name="keywords" content="tax accountant, tax preparation, Michael J Chaput, Lodesterre, small business taxes, estate and trust taxes">
+<meta property="og:title" content="Lodesterre Tax Accountants">
+<meta property="og:description" content="Every legal credit, deduction and adjustment, working for you and your family.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F4EF; --card:#FFFFFF; --mist:#E2E8EA; --ink:#1B2A41; --muted:#4A5668;
+  --sky:#8DB3D4; --brass:#B98A2F; --brass-ink:#7A5A17; --night:#14213A; --on-night:#EEF1F5;
+  --line:rgba(27,42,65,.16); --shadow:0 18px 40px -22px rgba(20,33,58,.35);
+  --serif:"Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --r-lg:28px; --r-md:18px; --max:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1828; --card:#16233A; --mist:#1D2C45; --ink:#E9EDF2; --muted:#A9B4C4;
+    --sky:#7FA6C8; --brass:#D4A64E; --brass-ink:#E4BE6E; --night:#0A1220; --on-night:#EEF1F5;
+    --line:rgba(233,237,242,.16); --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1828; --card:#16233A; --mist:#1D2C45; --ink:#E9EDF2; --muted:#A9B4C4;
+  --sky:#7FA6C8; --brass:#D4A64E; --brass-ink:#E4BE6E; --night:#0A1220; --on-night:#EEF1F5;
+  --line:rgba(233,237,242,.16); --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+h3{font-size:1.45rem}
+p{margin:0 0 1em;max-width:62ch}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ph{color:var(--muted);font-style:italic}
+section{padding:clamp(72px,10vw,120px) 0}
+.lede{font-size:1.15rem;color:var(--muted)}
+.kicker{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--brass-ink);margin-bottom:.6rem;display:block}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:.85em 1.5em;border-radius:999px;font:600 1rem/1 var(--sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-sm{padding:.6em 1.1em;font-size:.92rem;background:var(--mist);color:var(--ink)}
+.btn-brass{background:var(--brass);color:#1B2A41}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:100;background:var(--paper);display:grid;place-items:center;text-align:center}
+#loader .mark{width:84px;height:84px}
+#loader .mark path{fill:transparent;stroke:var(--brass);stroke-width:1.4;stroke-dasharray:260;stroke-dashoffset:260}
+#loader .word{font-family:var(--serif);font-size:2.4rem;margin-top:.4rem;opacity:0}
+#loader .trail{display:flex;gap:14px;justify-content:center;margin:18px 0 12px}
+#loader .trail span{width:9px;height:9px;opacity:.15;background:var(--brass);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+#loader .tag{font-size:.95rem;color:var(--muted);opacity:0}
+.no-loader #loader{display:none}
+
+/* top bar + header */
+.topbar{background:var(--night);color:var(--on-night);font-size:.88rem;padding:.55rem 0}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;justify-content:center}
+.topbar a{text-decoration:none}
+header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header.site .wrap{display:flex;align-items:center;gap:1.5rem;height:76px}
+.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.brand svg path{fill:var(--brass)}
+.brand b{font-family:var(--serif);font-weight:500;font-size:1.5rem}
+.brand small{display:block;font-size:.72rem;color:var(--muted);margin-top:-4px}
+nav.main{margin-left:auto;display:flex;gap:1.4rem}
+nav.main a{text-decoration:none;font-weight:500;font-size:.98rem}
+nav.main a:hover{color:var(--brass-ink)}
+.head-cta{display:flex;align-items:center;gap:1rem}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:999px;padding:.5em 1em;font:600 .95rem var(--sans);color:var(--ink)}
+@media (max-width:960px){
+  nav.main{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:var(--paper);padding:1rem 1.5rem 1.5rem;border-bottom:1px solid var(--line)}
+  nav.main.open{display:flex}
+  .menu-btn{display:inline-block}
+  .head-cta .phone{display:none}
+}
+@media (max-width:520px){.head-cta .btn{display:none}}
+
+/* hero */
+.hero{padding:clamp(48px,7vw,90px) 0 clamp(60px,8vw,100px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.2rem);line-height:1.02;margin:.3rem 0 1.4rem}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:inline-block}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.8rem 0 1rem}
+.hero .mini{display:flex;flex-wrap:wrap;gap:.6rem}
+.arch{position:relative;aspect-ratio:4/5;border-radius:999px 999px var(--r-lg) var(--r-lg);overflow:hidden;background:var(--night);box-shadow:var(--shadow)}
+.arch svg{position:absolute;inset:0;width:100%;height:100%}
+.arch .sky{transform-origin:50% 38%}
+.arch figcaption{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:var(--on-night);font-family:var(--serif);font-style:italic;font-size:1.05rem;opacity:.85}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.arch{max-width:380px;margin:0 auto;width:100%}}
+
+/* marquee */
+.strip{border-block:1px solid var(--line);padding:1.1rem 0;overflow:hidden;background:var(--mist)}
+.strip .track{display:flex;width:max-content;animation:marq 48s linear infinite}
+.strip ul{display:flex;gap:2.6rem;list-style:none;margin:0;padding:0 1.3rem 0 1.3rem}
+.strip li{font-family:var(--serif);font-size:1.25rem;white-space:nowrap;display:flex;align-items:center;gap:2.6rem}
+.strip li::after{content:"";width:8px;height:8px;background:var(--brass);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* divider */
+.divider{display:flex;justify-content:center;padding:0 20px}
+.divider svg{width:min(520px,100%);height:24px;overflow:visible}
+.divider path{fill:none;stroke:var(--brass);stroke-width:1.2;stroke-linecap:round}
+
+/* mission */
+.mission .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.circle{aspect-ratio:1;border-radius:50%;background:var(--mist);display:grid;place-items:center;text-align:center;padding:2rem;color:var(--muted);border:1px dashed var(--line)}
+.mission blockquote{margin:2rem 0 0;padding:1.4rem 1.6rem;border-left:3px solid var(--brass);background:var(--card);border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--serif);font-size:1.3rem;line-height:1.4}
+@media (max-width:860px){.mission .wrap{grid-template-columns:1fr}.circle{max-width:320px;margin:0 auto}}
+
+/* principles (pinned horizontal) */
+.principles{background:var(--night);color:var(--on-night);overflow:hidden}
+.principles .intro{margin-bottom:2.5rem}
+.principles .kicker{color:var(--brass)}
+.panels{display:flex;gap:clamp(20px,3vw,36px);width:max-content}
+.panel{width:min(78vw,560px);flex:0 0 auto;border:1px solid rgba(238,241,245,.18);border-radius:var(--r-lg);padding:clamp(28px,4vw,48px);background:rgba(255,255,255,.03)}
+.panel svg{width:42px;height:42px;margin-bottom:1.2rem}
+.panel svg path{fill:none;stroke:var(--brass);stroke-width:1.3}
+.panel h3{font-size:clamp(1.6rem,2.8vw,2.2rem);margin-bottom:1rem}
+.panel p{color:rgba(238,241,245,.82)}
+.static-panels .panels{width:auto;flex-direction:column}
+.static-panels .panel{width:auto}
+
+/* clients toggle */
+.toggle{display:inline-flex;position:relative;background:var(--mist);border-radius:999px;padding:5px;margin:1.8rem 0 2rem}
+.toggle button{position:relative;z-index:1;border:0;background:none;padding:.7em 1.4em;border-radius:999px;font:600 1rem var(--sans);color:var(--ink);cursor:pointer}
+.toggle .pill{position:absolute;top:5px;bottom:5px;left:5px;border-radius:999px;background:var(--card);box-shadow:var(--shadow);transition:transform .45s cubic-bezier(.6,.05,.2,1),width .45s}
+.client-pane[hidden]{display:none}
+.client-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.ccard{background:var(--card);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line)}
+.ccard svg{width:34px;height:34px;margin-bottom:1rem}
+.ccard svg *{fill:none;stroke:var(--brass);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.ccard h3{font-size:1.4rem}
+
+/* alert */
+.alert{background:var(--brass);color:#1B2A41;border-radius:var(--r-lg);padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center}
+.alert svg{width:54px;height:54px}
+.alert h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.alert p{margin:.4rem 0 0}
+.alert .btn{background:#1B2A41;color:#F2F4EF}
+@media (max-width:760px){.alert{grid-template-columns:1fr}}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,320px));gap:22px;margin-top:2.2rem}
+.flip{perspective:1200px;border:0;padding:0;background:none;text-align:left;cursor:pointer;font:inherit;color:inherit;height:400px}
+.flip .inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.5,.1,.2,1);transform-style:preserve-3d}
+.flip.on .inner{transform:rotateY(180deg)}
+.flip .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column}
+.flip .back{transform:rotateY(180deg)}
+.portrait{flex:1;border-radius:999px 999px var(--r-md) var(--r-md);background:var(--mist);display:grid;place-items:center;margin-bottom:1rem;color:var(--muted);font-size:.95rem}
+.portrait svg{width:56px;height:56px}
+.portrait svg path{fill:var(--brass);opacity:.7}
+.flip .role{color:var(--muted);font-size:.95rem}
+.flip .hint{font-size:.85rem;color:var(--brass-ink);margin-top:.4rem}
+
+/* reviews */
+.reviews-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem}
+.carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2rem 2px 1rem;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.review{flex:0 0 min(84%,420px);scroll-snap-align:start;background:var(--card);border-radius:var(--r-lg);padding:32px;border:1px solid var(--line)}
+.review p{font-family:var(--serif);font-size:1.3rem;line-height:1.45}
+.car-nav{display:flex;gap:.5rem}
+.car-nav button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:1.2rem;cursor:pointer}
+
+/* why */
+.why .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px)}
+.checks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.checks li{display:flex;gap:1rem;align-items:center;padding:1.05rem 0;border-bottom:1px solid var(--line);font-size:1.1rem}
+.checks svg{flex:0 0 26px;width:26px;height:26px}
+.checks svg circle{fill:var(--mist)}
+.checks svg path{fill:none;stroke:var(--brass-ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:860px){.why .wrap{grid-template-columns:1fr}}
+
+/* resources */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 1.8rem}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.5em 1.1em;font:600 .95rem var(--sans);cursor:pointer}
+.chip[aria-pressed="true"],.chip[aria-checked="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.res{display:flex;flex-direction:column;justify-content:space-between;gap:1rem;min-height:150px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;text-decoration:none;transition:border-color .2s,transform .2s}
+.res:hover{border-color:var(--brass);transform:translateY(-3px)}
+.res .cat{font-size:.82rem;color:var(--brass-ink);font-weight:600}
+.res h3{font-family:var(--sans);font-size:1.08rem;font-weight:600;line-height:1.35}
+.res .go{font-size:.9rem;color:var(--muted)}
+.res[hidden]{display:none}
+.note{font-size:.95rem;color:var(--muted);margin-top:1.6rem}
+
+/* faq */
+.faq .wrap{max-width:860px}
+.acc{border-top:1px solid var(--line);margin-top:2rem}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-item h3{font-family:var(--sans);font-size:1.12rem;font-weight:600}
+.acc-btn{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0;cursor:pointer}
+.acc-btn:focus-visible{outline:3px solid var(--brass)}
+.acc-btn .ic{flex:0 0 30px;height:30px;border-radius:50%;background:var(--mist);display:grid;place-items:center;transition:transform .3s}
+.acc-btn[aria-expanded="true"] .ic{transform:rotate(45deg)}
+.acc-panel{overflow:hidden;height:0;transition:height .35s ease}
+.acc-panel div{padding:0 0 1.3rem}
+
+/* cta band */
+.band{background:var(--night);color:var(--on-night);text-align:center;border-radius:var(--r-lg);padding:clamp(48px,7vw,90px) 24px;position:relative;overflow:hidden}
+.band h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:1.4rem}
+.band .btn{background:var(--brass);color:#1B2A41}
+.band p{margin:1rem auto 0;color:rgba(238,241,245,.75)}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,80px)}
+.contact dl{margin:1.6rem 0 0}
+.contact dt{font-weight:600;margin-top:1rem}
+.contact dd{margin:0;color:var(--muted)}
+form{background:var(--card);border-radius:var(--r-lg);padding:clamp(24px,4vw,40px);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+label,.lbl{display:block;font-weight:600;font-size:.95rem;margin-bottom:.35rem}
+input,textarea{width:100%;font:inherit;font-size:1rem;padding:.8em 1em;border-radius:14px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.form-msg{grid-column:1/-1;font-weight:600;min-height:1.4em}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--night);color:var(--on-night);padding:72px 0 calc(28px + env(safe-area-inset-bottom,0px));margin-top:clamp(72px,10vw,120px)}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+footer h3{font-family:var(--sans);font-size:.95rem;font-weight:700;margin-bottom:1rem;color:var(--brass)}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.45rem 0}
+footer a{text-decoration:none;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+footer .brand b{color:var(--on-night)}
+footer .brand small{color:rgba(238,241,245,.7)}
+footer .base{margin-top:48px;padding-top:22px;border-top:1px solid rgba(238,241,245,.15);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.9rem;opacity:.8}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer .cols{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .strip .track{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Reusable lodestar shape -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="star" d="M50 2 L58 42 L98 50 L58 58 L50 98 L42 58 L2 50 L42 42 Z"/>
+  </defs>
+</svg>
+
+<div id="loader" role="status" aria-label="Loading">
+  <div>
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 L58 42 L98 50 L58 58 L50 98 L42 58 L2 50 L42 42 Z"/></svg>
+    <div class="word">Lodesterre</div>
+    <div class="trail" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="tag">Lodesterre Tax Accountants • Michael J Chaput Tax Services</div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="ph">[Office address]</span>
+    <span class="ph">[Phone number]</span>
+    <a href="https://www.lodesterre.com/contact.htm">Contact page</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Lodesterre Tax Accountants, home">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#star"/></svg>
+      <span><b>Lodesterre</b><small>Michael J Chaput Tax Services</small></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mainnav">Menu</button>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <a href="#mission">About</a>
+      <a href="#clients">Who we serve</a>
+      <a href="#team">Credentials</a>
+      <a href="#resources">Refunds &amp; tools</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="head-cta">
+      <span class="phone ph">[Phone]</span>
+      <a class="btn btn-primary" href="#contact">Contact us</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div>
+      <span class="kicker hero-fade">Lodesterre Tax Accountants</span>
+      <h1 id="hero-h">
+        <span class="ln"><span>Every legal credit,</span></span>
+        <span class="ln"><span>deduction and</span></span>
+        <span class="ln"><span>adjustment, working</span></span>
+        <span class="ln"><span>for you.</span></span>
+      </h1>
+      <p class="lede hero-fade">We serve single individuals, families, small to large businesses, partnerships, corporations, estates and trusts with the same consistent due diligence we would provide to our parents.</p>
+      <div class="ctas hero-fade">
+        <a class="btn btn-primary" href="#contact">Contact us</a>
+        <a class="btn btn-ghost" href="https://www.lodesterre.com/credentials.htm">View our credentials</a>
+      </div>
+      <div class="mini hero-fade">
+        <a class="btn btn-sm" href="https://sa.www4.irs.gov/irfof/lang/en/irfofgetstatus.jsp" target="_blank" rel="noopener">Where's my federal refund?</a>
+        <a class="btn btn-sm" href="#resources">Where's my state refund?</a>
+      </div>
+    </div>
+    <figure class="arch" style="margin:0">
+      <svg viewBox="0 0 400 500" role="img" aria-label="Illustration of a night sky with a guiding lodestar">
+        <g class="sky">
+          <g fill="#EEF1F5">
+            <circle cx="60" cy="90" r="1.4"/><circle cx="120" cy="150" r="1"/><circle cx="310" cy="80" r="1.6"/>
+            <circle cx="340" cy="200" r="1"/><circle cx="80" cy="260" r="1.2"/><circle cx="250" cy="300" r="1"/>
+            <circle cx="160" cy="60" r="1"/><circle cx="360" cy="320" r="1.3"/><circle cx="40" cy="380" r="1"/>
+            <circle cx="290" cy="420" r="1.1"/><circle cx="130" cy="420" r="1.3"/><circle cx="220" cy="110" r="1.2"/>
+          </g>
+          <g stroke="#8DB3D4" stroke-width=".8" fill="none" opacity=".5">
+            <path d="M60 90 L120 150 L160 60 L220 110 L310 80"/>
+            <path d="M80 260 L130 420 M250 300 L360 320 L290 420"/>
+          </g>
+          <circle cx="200" cy="190" r="140" fill="none" stroke="#8DB3D4" stroke-width=".6" opacity=".25"/>
+          <circle cx="200" cy="190" r="90" fill="none" stroke="#8DB3D4" stroke-width=".6" opacity=".25"/>
+          <g transform="translate(150 140)"><use href="#star" fill="#D4A64E"/></g>
+          <circle cx="200" cy="190" r="70" fill="#D4A64E" opacity=".08"/>
+        </g>
+        <path d="M0 470 Q200 430 400 470 L400 500 L0 500 Z" fill="#1B2A41"/>
+      </svg>
+      <figcaption>Lodestar: the star that guides.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip" aria-label="Who we serve">
+  <div class="track">
+    <ul><li>Single individuals</li><li>Families</li><li>Small to large businesses</li><li>Partnerships</li><li>Corporations</li><li>Estates and trusts</li><li>Every legal credit, deduction and adjustment</li></ul>
+    <ul aria-hidden="true"><li>Single individuals</li><li>Families</li><li>Small to large businesses</li><li>Partnerships</li><li>Corporations</li><li>Estates and trusts</li><li>Every legal credit, deduction and adjustment</li></ul>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section class="mission" id="mission" aria-labelledby="mission-h">
+  <div class="wrap">
+    <div class="circle"><span>[Office or team photo]</span></div>
+    <div>
+      <span class="kicker">Our mission</span>
+      <h2 id="mission-h">Minimizing your taxes, legally and thoroughly.</h2>
+      <p class="lede" style="margin-top:1.4rem">Our mission is to minimize taxes by utilizing every legal tax credit, deduction and adjustment available to the taxpayer and their families.</p>
+      <p>We serve single individuals, families, small to large businesses, partnerships, corporations, estates and trusts with the same consistent due diligence we would provide to our parents.</p>
+      <blockquote>Whenever we encounter gray areas of the Internal Revenue Code, we take the position that is most advantageous to our clients.</blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg viewBox="0 0 520 24"><path class="draw" d="M0 12 H236 M284 12 H520"/><path class="draw" d="M260 0 L264 8 L272 12 L264 16 L260 24 L256 16 L248 12 L256 8 Z"/></svg></div>
+
+<!-- PRINCIPLES (pinned horizontal) -->
+<section class="principles" id="principles" aria-labelledby="pr-h">
+  <div class="wrap intro">
+    <span class="kicker">How we work</span>
+    <h2 id="pr-h">Three commitments behind every return.</h2>
+  </div>
+  <div class="wrap">
+    <div class="panels">
+      <article class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 V14 L24 6 L40 14 V40 Z M16 40 V24 H32 V40 M8 14 H40"/></svg>
+        <h3>Every legal credit, deduction and adjustment</h3>
+        <p>We work to minimize your taxes by using every legal tax credit, deduction and adjustment available to you and your family.</p>
+      </article>
+      <article class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42 C10 32 6 24 6 17 A9 9 0 0 1 24 13 A9 9 0 0 1 42 17 C42 24 38 32 24 42 Z"/></svg>
+        <h3>The care we would give our parents</h3>
+        <p>Whether you file as a single individual or manage an estate, you get the same consistent due diligence we would provide to our own parents.</p>
+      </article>
+      <article class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 V44 M10 12 H38 M10 12 L4 26 H16 Z M38 12 L32 26 H44 Z M16 44 H32"/></svg>
+        <h3>Gray areas resolved in your favor</h3>
+        <p>Whenever we encounter gray areas of the Internal Revenue Code, we take the position that is most advantageous to our clients.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS TOGGLE -->
+<section id="clients" aria-labelledby="cl-h">
+  <div class="wrap">
+    <span class="kicker">Who we serve</span>
+    <h2 id="cl-h">From a single return to a family trust.</h2>
+    <div class="toggle" role="tablist" aria-label="Client type">
+      <span class="pill" aria-hidden="true"></span>
+      <button role="tab" id="t-ind" aria-selected="true" aria-controls="p-ind">Individuals &amp; families</button>
+      <button role="tab" id="t-biz" aria-selected="false" aria-controls="p-biz" tabindex="-1">Businesses &amp; estates</button>
+    </div>
+    <div class="client-pane" id="p-ind" role="tabpanel" aria-labelledby="t-ind">
+      <p class="lede">Every legal tax credit, deduction and adjustment available to the taxpayer and their families, with the due diligence we'd give our own parents.</p>
+      <div class="client-grid">
+        <article class="ccard"><svg viewBox="0 0 40 40"><circle cx="20" cy="13" r="6"/><path d="M8 34 C8 25 14 22 20 22 C26 22 32 25 32 34"/></svg><h3>Single individuals</h3><p class="ph">[Service details]</p></article>
+        <article class="ccard"><svg viewBox="0 0 40 40"><circle cx="14" cy="13" r="5"/><circle cx="27" cy="15" r="4"/><path d="M4 34 C4 26 9 22 14 22 C19 22 24 26 24 34 M22 24 C28 21 36 24 36 34"/></svg><h3>Families</h3><p class="ph">[Service details]</p></article>
+      </div>
+    </div>
+    <div class="client-pane" id="p-biz" role="tabpanel" aria-labelledby="t-biz" hidden>
+      <p class="lede">The same consistent due diligence, from small businesses to corporations, estates and trusts.</p>
+      <div class="client-grid">
+        <article class="ccard"><svg viewBox="0 0 40 40"><path d="M6 34 V14 H34 V34 Z M14 14 V8 H26 V14 M6 22 H34"/></svg><h3>Small to large businesses</h3><p class="ph">[Service details]</p></article>
+        <article class="ccard"><svg viewBox="0 0 40 40"><circle cx="13" cy="20" r="8"/><circle cx="27" cy="20" r="8"/></svg><h3>Partnerships</h3><p class="ph">[Service details]</p></article>
+        <article class="ccard"><svg viewBox="0 0 40 40"><path d="M8 34 V8 H24 V34 M24 16 H32 V34 M4 34 H36 M13 14 H19 M13 20 H19 M13 26 H19"/></svg><h3>Corporations</h3><p class="ph">[Service details]</p></article>
+        <article class="ccard"><svg viewBox="0 0 40 40"><path d="M8 18 L20 8 L32 18 V34 H8 Z M16 34 V24 H24 V34"/></svg><h3>Estates and trusts</h3><p class="ph">[Service details]</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAX ALERT -->
+<section style="padding-top:0" aria-labelledby="alert-h">
+  <div class="wrap">
+    <div class="alert">
+      <svg viewBox="0 0 54 54" aria-hidden="true"><path d="M27 4 L51 48 H3 Z" fill="none" stroke="#1B2A41" stroke-width="2.5" stroke-linejoin="round"/><path d="M27 20 V33" stroke="#1B2A41" stroke-width="3" stroke-linecap="round"/><circle cx="27" cy="40" r="2" fill="#1B2A41"/></svg>
+      <div>
+        <h2 id="alert-h">Tax alert</h2>
+        <p>You will not believe these ads.</p>
+      </div>
+      <a class="btn" href="https://www.lodesterre.com/tax_alert!!.htm">Read the tax alert</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" aria-labelledby="team-h" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Who you'll work with</span>
+    <h2 id="team-h">Credentials</h2>
+    <div class="team-grid">
+      <div class="flip" role="button" tabindex="0" aria-pressed="false" aria-label="Michael J Chaput. Select to show bio.">
+        <span class="inner">
+          <span class="face front">
+            <span class="portrait"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#star"/></svg></span>
+            <h3>Michael J Chaput</h3>
+            <span class="role">Michael J Chaput Tax Services</span>
+            <span class="hint">Select for bio</span>
+          </span>
+          <span class="face back">
+            <h3>Michael J Chaput</h3>
+            <p class="ph" style="margin-top:1rem">[Bio and credentials coming soon]</p>
+            <span style="margin-top:auto"><a class="btn btn-ghost" href="https://www.lodesterre.com/credentials.htm" tabindex="-1">View credentials</a></span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section aria-labelledby="rev-h" style="padding-top:0">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div><span class="kicker">Kind words</span><h2 id="rev-h">From our clients</h2></div>
+      <div class="car-nav"><button aria-label="Previous review" data-dir="-1">&#8592;</button><button aria-label="Next review" data-dir="1">&#8594;</button></div>
+    </div>
+    <div class="carousel" tabindex="0" aria-label="Client reviews">
+      <figure class="review" style="margin:0"><p class="ph">[Client review]</p><figcaption class="ph">[Client name]</figcaption></figure>
+      <figure class="review" style="margin:0"><p class="ph">[Client review]</p><figcaption class="ph">[Client name]</figcaption></figure>
+      <figure class="review" style="margin:0"><p class="ph">[Client review]</p><figcaption class="ph">[Client name]</figcaption></figure>
+      <figure class="review" style="margin:0"><p class="ph">[Client review]</p><figcaption class="ph">[Client name]</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" aria-labelledby="why-h" style="padding-top:0">
+  <div class="wrap">
+    <div><span class="kicker">Why Lodesterre</span><h2 id="why-h">What you can count on.</h2></div>
+    <ul class="checks">
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>Every legal credit, deduction and adjustment</li>
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>Individuals and families</li>
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>Small to large businesses</li>
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>Partnerships and corporations</li>
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>Estates and trusts</li>
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>The same due diligence we would give our parents</li>
+      <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13"/><path d="M8 13.5 L11.5 17 L18.5 9.5"/></svg>Gray areas resolved in our clients' favor</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><svg viewBox="0 0 520 24"><path class="draw" d="M0 12 H236 M284 12 H520"/><path class="draw" d="M260 0 L264 8 L272 12 L264 16 L260 24 L256 16 L248 12 L256 8 Z"/></svg></div>
+
+<!-- RESOURCES -->
+<section id="resources" aria-labelledby="res-h">
+  <div class="wrap">
+    <span class="kicker">Refunds &amp; tools</span>
+    <h2 id="res-h">Check a refund, estimate withholding, find a calculator.</h2>
+    <div class="filters" role="group" aria-label="Filter resources">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="federal" aria-pressed="false">Federal</button>
+      <button class="chip" data-f="state" aria-pressed="false">State refunds</button>
+      <button class="chip" data-f="calc" aria-pressed="false">Calculators</button>
+      <button class="chip" data-f="local" aria-pressed="false">News &amp; local</button>
+    </div>
+    <div class="res-grid" id="resgrid"></div>
+    <p class="note">Found a broken link? Please report it to <a href="mailto:webmaster@lodesterre.com?subject=Broken%20Link">webmaster@lodesterre.com</a>.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-h" style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Questions</span>
+    <h2 id="faq-h">Frequently asked</h2>
+    <div class="acc" id="acc"></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="wrap">
+  <div class="band">
+    <h2>Let's go through your taxes together.</h2>
+    <a class="btn" href="#contact">Contact us</a>
+    <p class="ph" style="color:rgba(238,241,245,.75)">[Phone number]</p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="ct-h">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2 id="ct-h">Get in touch.</h2>
+      <dl>
+        <dt>Lodesterre Tax Accountants</dt><dd>Michael J Chaput Tax Services</dd>
+        <dt>Address</dt><dd class="ph">[Office address]</dd>
+        <dt>Phone</dt><dd class="ph">[Phone number]</dd>
+        <dt>Email</dt><dd class="ph">[Contact email]</dd>
+        <dt>Website issues</dt><dd><a href="mailto:webmaster@lodesterre.com?subject=Broken%20Link">webmaster@lodesterre.com</a></dd>
+      </dl>
+      <p style="margin-top:1.6rem"><a class="btn btn-ghost" href="https://www.lodesterre.com/contact.htm">Open our contact page</a></p>
+    </div>
+    <form id="cform" novalidate>
+      <div><label for="f-name">Name *</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="full"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full">
+        <span class="lbl" id="ct-lbl">I'm filing as</span>
+        <div class="chips" role="radiogroup" aria-labelledby="ct-lbl" id="ctype">
+          <button type="button" class="chip" role="radio" aria-checked="false">Individual</button>
+          <button type="button" class="chip" role="radio" aria-checked="false">Family</button>
+          <button type="button" class="chip" role="radio" aria-checked="false">Business</button>
+          <button type="button" class="chip" role="radio" aria-checked="false">Partnership</button>
+          <button type="button" class="chip" role="radio" aria-checked="false">Corporation</button>
+          <button type="button" class="chip" role="radio" aria-checked="false">Estate or trust</button>
+        </div>
+      </div>
+      <div class="full"><label for="f-msg">Message *</label><textarea id="f-msg" name="message" required></textarea></div>
+      <div class="full"><button class="btn btn-primary" type="submit">Send message</button></div>
+      <p class="form-msg" id="fmsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#star"/></svg><span><b>Lodesterre</b><small>Michael J Chaput Tax Services</small></span></a>
+        <p style="margin-top:1.2rem;opacity:.8;font-size:.95rem">Minimizing taxes by utilizing every legal tax credit, deduction and adjustment.</p>
+      </div>
+      <div><h3>Explore</h3><ul><li><a href="#mission">About</a></li><li><a href="#clients">Who we serve</a></li><li><a href="https://www.lodesterre.com/credentials.htm">Credentials</a></li><li><a href="#resources">Refunds &amp; tools</a></li><li><a href="https://www.lodesterre.com/tax_alert!!.htm">Tax alert</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li class="ph" style="color:inherit;opacity:.75">[Office address]</li><li class="ph" style="color:inherit;opacity:.75">[Phone number]</li><li><a href="https://www.lodesterre.com/contact.htm">Contact page</a></li><li><a href="mailto:webmaster@lodesterre.com?subject=Broken%20Link">Report a broken link</a></li></ul></div>
+      <div><h3>Policies</h3><ul><li><a href="#">[Our policies]</a></li><li><a href="#">[Privacy policy]</a></li><li><a href="#">[Accessibility statement]</a></li></ul></div>
+    </div>
+    <div class="base"><span>© Lodesterre Tax Accountants <span id="yr"></span></span><span>Michael J Chaput Tax Services</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.matchMedia('(max-width: 860px)').matches;
+  var hasGsap = typeof window.gsap !== 'undefined';
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- Resources data (links from the original site) ---------- */
+  var RES = [
+    ['federal','Where\u2019s my federal refund?','https://sa.www4.irs.gov/irfof/lang/en/irfofgetstatus.jsp'],
+    ['federal','Where\u2019s my amended return?','https://www.irs.gov/filing/wheres-my-amended-return'],
+    ['federal','View your IRS tax account','https://www.irs.gov/payments/view-your-tax-account'],
+    ['federal','Estimate my federal withholding','https://www.irs.gov/individuals/irs-withholding-calculator'],
+    ['state','New York refund status','https://www8.tax.ny.gov/PRIS/prisStart'],
+    ['state','Create my New York State account','https://www8.tax.ny.gov/OSIN/osinHome'],
+    ['state','Maine refund status','https://portal.maine.gov/refundstatus/'],
+    ['state','Massachusetts refund status','https://www.mass.gov/how-to/check-the-status-of-your-tax-refund'],
+    ['state','Vermont refund status','https://secure.vermont.gov/TAX/refund/'],
+    ['state','Connecticut refund status','http://www.ct.gov/drs/cwp/view.asp?a=1462&q=266274'],
+    ['state','North Carolina refund status','https://eservices.dor.nc.gov/wheresmyrefund/SelectionServlet'],
+    ['state','California refund status','https://www.ftb.ca.gov/refund/index.asp'],
+    ['calc','Financial calculators','http://www.dinkytown.net/'],
+    ['calc','Cost to build','http://wsip-184-185-152-244.sd.sd.cox.net/CornersType.asp'],
+    ['calc','Cost to build a shell','https://www.costtobuild.net/est_garage.html'],
+    ['local','The Boston Globe','http://www.bostonglobe.com/'],
+    ['local','Portland Press Herald','http://www.pressherald.com/'],
+    ['local','The Times Union','http://www.timesunion.com/'],
+    ['local','Superpages','https://www.superpages.com/'],
+    ['local','Weather.com','https://weather.com/'],
+    ['local','Nationwide real estate listings','http://www.realtor.com']
+  ];
+  var CAT = {federal:'Federal (IRS)',state:'State refund',calc:'Calculator',local:'News & local'};
+  var grid = document.getElementById('resgrid');
+  RES.forEach(function(r){
+    var a = document.createElement('a');
+    a.className='res'; a.href=r[2]; a.target='_blank'; a.rel='noopener'; a.dataset.cat=r[0];
+    a.innerHTML='<span class="cat">'+CAT[r[0]]+'</span><h3>'+r[1]+'</h3><span class="go">Opens in a new tab</span>';
+    grid.appendChild(a);
+  });
+  document.querySelectorAll('.filters .chip').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.filters .chip').forEach(function(b){b.setAttribute('aria-pressed','false')});
+      btn.setAttribute('aria-pressed','true');
+      var f=btn.dataset.f;
+      grid.querySelectorAll('.res').forEach(function(el){el.hidden = !(f==='all'||el.dataset.cat===f)});
+      if(window.ScrollTrigger) ScrollTrigger.refresh();
+    });
+  });
+
+  /* ---------- FAQ (answers only from the original site) ---------- */
+  var FAQ = [
+    ['Who do you serve?','Single individuals, families, small to large businesses, partnerships, corporations, estates and trusts, all with the same consistent due diligence we would provide to our parents.'],
+    ['What is your approach to minimizing taxes?','Our mission is to minimize taxes by utilizing every legal tax credit, deduction and adjustment available to the taxpayer and their families.'],
+    ['How do you handle gray areas of the tax code?','Whenever we encounter gray areas of the Internal Revenue Code, we take the position that is most advantageous to our clients.'],
+    ['How do I check my federal refund?','Use the IRS <a href="https://sa.www4.irs.gov/irfof/lang/en/irfofgetstatus.jsp" target="_blank" rel="noopener">Where\u2019s My Refund</a> tool. For an amended return, use <a href="https://www.irs.gov/filing/wheres-my-amended-return" target="_blank" rel="noopener">Where\u2019s My Amended Return</a>.'],
+    ['How do I check my state refund?','We link to refund status pages for New York, Maine, Massachusetts, Vermont, Connecticut, North Carolina and California in <a href="#resources">Refunds &amp; tools</a>.'],
+    ['Can I estimate what I\u2019ll owe or get back?','The IRS <a href="https://www.irs.gov/individuals/irs-withholding-calculator" target="_blank" rel="noopener">withholding estimator</a> is designed to calibrate withholding, and it also accurately estimates a tax due or a refund.'],
+    ['I found a broken link. Who do I tell?','Please report broken links to <a href="mailto:webmaster@lodesterre.com?subject=Broken%20Link">webmaster@lodesterre.com</a>.']
+  ];
+  var acc = document.getElementById('acc');
+  FAQ.forEach(function(q,i){
+    var item=document.createElement('div'); item.className='acc-item';
+    item.innerHTML='<h3><button class="acc-btn" aria-expanded="false" aria-controls="ap'+i+'" id="ab'+i+'"><span>'+q[0]+'</span><span class="ic" aria-hidden="true">+</span></button></h3><div class="acc-panel" id="ap'+i+'" role="region" aria-labelledby="ab'+i+'"><div><p>'+q[1]+'</p></div></div>';
+    acc.appendChild(item);
+  });
+  acc.addEventListener('click',function(e){
+    var b=e.target.closest('.acc-btn'); if(!b) return;
+    var p=document.getElementById(b.getAttribute('aria-controls'));
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));
+    p.style.height = open ? '0px' : p.scrollHeight+'px';
+    setTimeout(function(){ if(window.ScrollTrigger) ScrollTrigger.refresh(); },380);
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var mb=document.querySelector('.menu-btn'), nav=document.getElementById('mainnav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+
+  /* ---------- Client toggle ---------- */
+  var tabs=[document.getElementById('t-ind'),document.getElementById('t-biz')];
+  var pill=document.querySelector('.toggle .pill');
+  function placePill(t){pill.style.width=t.offsetWidth+'px';pill.style.transform='translateX('+(t.offsetLeft-5)+'px)'}
+  function selectTab(t){
+    tabs.forEach(function(x){
+      var on=x===t; x.setAttribute('aria-selected',String(on)); x.tabIndex=on?0:-1;
+      var pane=document.getElementById(x.getAttribute('aria-controls'));
+      if(on){
+        pane.hidden=false;
+        if(hasGsap && !reduce) gsap.fromTo(pane.querySelectorAll('.ccard, .lede'),{opacity:0,y:18,scale:.97},{opacity:1,y:0,scale:1,duration:.5,stagger:.06,ease:'power2.out'});
+      } else pane.hidden=true;
+    });
+    placePill(t);
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){selectTab(t)});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=tabs[(i+1)%2];n.focus();selectTab(n)}
+    });
+  });
+  placePill(tabs[0]); window.addEventListener('resize',function(){placePill(document.querySelector('.toggle [aria-selected="true"]'))});
+
+  /* ---------- Flip cards ---------- */
+  document.querySelectorAll('.flip').forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(e.target.closest('a')) return;
+      var on=card.classList.toggle('on');
+      card.setAttribute('aria-pressed',String(on));
+      card.querySelectorAll('.back a').forEach(function(a){a.tabIndex=on?0:-1});
+    });
+    card.addEventListener('keydown',function(e){
+      if(e.target!==card) return;
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click()}
+    });
+    if(!reduce && !isMobile){
+      card.addEventListener('mousemove',function(e){
+        if(card.classList.contains('on')) return;
+        var r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+        card.querySelector('.inner').style.transform='rotateX('+(-y*6)+'deg) rotateY('+(x*8)+'deg)';
+      });
+      card.addEventListener('mouseleave',function(){card.querySelector('.inner').style.transform=''});
+      card.addEventListener('click',function(){card.querySelector('.inner').style.transform=''});
+    }
+  });
+
+  /* ---------- Reviews carousel ---------- */
+  var car=document.querySelector('.carousel');
+  document.querySelectorAll('.car-nav button').forEach(function(b){
+    b.addEventListener('click',function(){car.scrollBy({left:(+b.dataset.dir)*car.clientWidth*.8,behavior:reduce?'auto':'smooth'})});
+  });
+
+  /* ---------- Contact form ---------- */
+  var CONTACT_EMAIL = ''; // Add the firm's contact address here to have the form open an email to it.
+  document.querySelectorAll('#ctype .chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      document.querySelectorAll('#ctype .chip').forEach(function(x){x.setAttribute('aria-checked','false')});
+      c.setAttribute('aria-checked','true');
+    });
+  });
+  document.getElementById('cform').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target, msg=document.getElementById('fmsg');
+    var name=f.name.value.trim(), email=f.email.value.trim(), m=f.message.value.trim();
+    if(!name||!email||!m){msg.textContent='Add your name, email and a message, then send again.';return}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.textContent='Check your email address. It should look like name@example.com.';return}
+    var type=(document.querySelector('#ctype [aria-checked="true"]')||{}).textContent||'Not specified';
+    if(CONTACT_EMAIL){
+      var body='Name: '+name+'\nEmail: '+email+'\nPhone: '+f.phone.value+'\nFiling as: '+type+'\n\n'+m;
+      window.location.href='mailto:'+CONTACT_EMAIL+'?subject='+encodeURIComponent('Website inquiry from '+name)+'&body='+encodeURIComponent(body);
+      msg.textContent='Your email app is opening with your message.';
+    } else {
+      msg.textContent='Thanks, '+name+'. Online messages aren\u2019t connected yet, so please reach us through our contact page.';
+    }
+  });
+
+  /* ---------- Loader (once per session) ---------- */
+  var seen=false;
+  try{seen=sessionStorage.getItem('lt_loader')==='1';sessionStorage.setItem('lt_loader','1')}catch(err){}
+  var loader=document.getElementById('loader');
+
+  function heroIntro(){
+    if(!hasGsap||reduce) return;
+    gsap.from('.hero h1 .ln span',{yPercent:110,duration:.9,stagger:.09,ease:'power3.out'});
+    gsap.from('.hero-fade',{opacity:0,y:16,duration:.8,stagger:.08,delay:.25,ease:'power2.out'});
+    gsap.from('.arch',{opacity:0,scale:.96,duration:1.1,ease:'power2.out'});
+  }
+
+  if(seen){document.documentElement.classList.add('no-loader');heroIntro()}
+  else if(reduce||!hasGsap){
+    loader.style.transition='opacity .3s';
+    loader.querySelector('.word').style.opacity=1;loader.querySelector('.tag').style.opacity=1;
+    loader.querySelector('.mark path').style.fill='var(--brass)';
+    setTimeout(function(){loader.style.opacity=0;setTimeout(function(){loader.remove()},320)},300);
+  } else {
+    var tl=gsap.timeline({onComplete:function(){loader.remove()}});
+    tl.to('#loader .mark path',{strokeDashoffset:0,duration:.7,ease:'power2.inOut'})
+      .to('#loader .mark path',{fill:getComputedStyle(document.documentElement).getPropertyValue('--brass'),duration:.3},'-=.1')
+      .to('#loader .word',{opacity:1,duration:.4},'-=.35')
+      .to('#loader .trail span',{opacity:1,duration:.12,stagger:.12},'-=.3')
+      .to('#loader .tag',{opacity:1,duration:.35},'-=.4')
+      .to('#loader > div',{y:-60,opacity:0,duration:.45,ease:'power2.in'},'+=.1')
+      .to(loader,{yPercent:-100,duration:.65,ease:'power3.inOut'},'-=.2')
+      .add(heroIntro,'-=.4');
+  }
+
+  /* ---------- Smooth scroll + scroll motion ---------- */
+  if(!hasGsap || typeof window.ScrollTrigger==='undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  if(!reduce && typeof window.Lenis!=='undefined'){
+    var lenis=new Lenis({duration:1.15,smoothWheel:true});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){lenis.raf(t*1000)});
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var id=a.getAttribute('href'); if(id.length<2) return;
+        var el=document.querySelector(id); if(!el) return;
+        e.preventDefault(); lenis.scrollTo(el,{offset:-80});
+      });
+    });
+  }
+
+  if(reduce) return;
+
+  // Ken Burns on the hero sky
+  gsap.to('.arch .sky',{scale:1.12,rotation:4,duration:24,ease:'none',repeat:-1,yoyo:true});
+
+  // Dividers draw in
+  document.querySelectorAll('.divider .draw').forEach(function(p){
+    var len=p.getTotalLength(); p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+    gsap.to(p,{strokeDashoffset:0,duration:1.4,ease:'power2.out',scrollTrigger:{trigger:p.closest('.divider'),start:'top 85%'}});
+  });
+
+  // Pinned horizontal principles (desktop) / stacked (mobile)
+  var mm=gsap.matchMedia();
+  mm.add('(min-width: 861px)',function(){
+    var track=document.querySelector('.panels');
+    var dist=function(){return Math.max(0,track.scrollWidth-document.querySelector('.principles .wrap').clientWidth+40)};
+    gsap.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'.principles',start:'top top',end:function(){return '+='+dist()},pin:true,scrub:1,invalidateOnRefresh:true}});
+  });
+  mm.add('(max-width: 860px)',function(){
+    document.querySelector('.principles').classList.add('static-panels');
+    gsap.utils.toArray('.panel').forEach(function(p){gsap.from(p,{opacity:0,y:24,duration:.6,scrollTrigger:{trigger:p,start:'top 88%'}})});
+    return function(){document.querySelector('.principles').classList.remove('static-panels')};
+  });
+})();
+</script>
+</body>
+</html>
